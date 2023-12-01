@@ -3,14 +3,14 @@ import { useState } from "react";
 import img1 from "../resources/image1.svg";
 import img2 from "../resources/image2.svg";
 
-export const Modal = ({ openModal, setOpenModal }) => {
+export const Modal1 = ({ openModal1, setOpenModal1 }) => {
   const [input, setInput] = useState("");
   const [emailSend, setEmailSend] = useState(false);
 
   const sendEmail = () => {
     setEmailSend(true);
     setTimeout(() => {
-      setOpenModal(false);
+      setOpenModal1(false);
     }, 2000);
   };
   return (
@@ -47,7 +47,7 @@ export const Modal = ({ openModal, setOpenModal }) => {
               <button
                 className="modal-footer-button modal-button-cancel"
                 onClick={() => {
-                  setOpenModal(false);
+                  setOpenModal1(false);
                 }}
               >
                 Cancel
