@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import img1 from "../resources/image1.svg";
-import img2 from "../resources/image2.svg";
+import img1 from "../resources/images/image1.svg";
+import img2 from "../resources/images/image2.svg";
 
 export const Modal1 = ({ openModal1, setOpenModal1 }) => {
   const [input, setInput] = useState("");

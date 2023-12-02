@@ -12,8 +12,6 @@ export function App() {
         className="open-modal-button"
         onClick={() => {
           setOpenModal1(true);
-          // setOpenModal2(true);
-
         }}
       >
         Subscribe

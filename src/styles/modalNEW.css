@@ -16,3 +16,13 @@
   display: flex;
   justify-content: center;
 }
+
+.modalContent {
+  border-top: 1px solid #363e54;
+  /* background-color: #3b4874; */
+  /* padding-top: 20px; */
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px
+}

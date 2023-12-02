@@ -1,10 +1,17 @@
 import React from "react";
 import { useState } from "react";
-import img1 from "../resources/image1.svg";
-import img2 from "../resources/image2.svg";
+import styles from '../styles/App.module.css'
+import TokenList from './TokenList'
+
+import img2 from "../resources/images/image2.svg";
+
+import tokenEthList from "../resources/data/tokenEthList.json";
 
 export const Modal2 = ({ openModal2, setOpenModal2 }) => {
-  const [input, setInput] = useState("");
+  let tokenList = tokenEthList;
+  let [tokenOne, setTokenOne] = useState(tokenList[0]);
+  let [tokenTwo, setTokenTwo] = useState(tokenList[1]);
+
   const [emailSend, setEmailSend] = useState(false);
 
   const sendEmail = () => {
@@ -13,31 +20,43 @@ export const Modal2 = ({ openModal2, setOpenModal2 }) => {
       setOpenModal2(false);
     }, 2000);
   };
+
+  function modifyToken(idx) {
+    alert("Modifying Token " + idx);
+  }
+
+  function getTokenList() {
+    
+  }
+  
   return (
     <>
       {!emailSend && (
         <div className="main-container">
           <div className="modal-container">
-            <img className="modal-image" src={img1} />
-            <h3 className="">Subscribe to our newsletter</h3>
-            <div>
-              <div className="modal-text">
-                An email will be sent to you everyweek. The email contains a new
-                information that will be received and the information about the
-                benefits of using our platform.
+
+          <div className="modalContent">
+          {/* {tokenList?.map((e, i) => {
+            return (
+              <div
+                className={styles.tokenChoice}
+                key={i}
+                onClick={() => modifyToken(i)}
+              >
+                <img src={e.img} alt={e.ticker} className={styles.tokenLogo} />
+                <div className={styles.tokenChoiceNames}>
+                  <div className={styles.tokenName}>{e.name}</div>
+                  <div className={styles.tokenTicker}>{e.ticker}</div>
+                </div>
               </div>
-            </div>
-            <div className="modal-input-label">
-              <label className="modal--input-text ">Email address</label>
-              <input
-                placeholder="Email"
-                className="modal-input"
-                label={"Input"}
-                type="email"
-                onChange={(input) => setInput(input)}
-              />
-            </div>
-            <div>
+            );
+          })} */}
+
+
+          </div>
+            <h3 className="">Token List</h3>
+             <div>
+              <TokenList />
               <button
                 className="modal-footer-button modal-button-send"
                 onClick={sendEmail}
